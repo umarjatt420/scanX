@@ -4,5 +4,5 @@ from .models import User
 
 @admin.register(User)
 class UserAdmin(admin.ModelAdmin):
-    list_display = ['email', 'fullname', 'is_staff']
+    list_display = ['email', 'full_name', 'is_staff']
     exclude = ['first_name', 'last_name']
