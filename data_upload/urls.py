@@ -15,7 +15,13 @@ Including another URLconf
 """
 
 from django.urls import path
-from .views.views import RegisterView
+from .views.register_APIView import RegisterView
+from .views.login_APIView import LoginView
+from .views.logout_APIView import LogoutView
+from .views.upload_APIView import UploadView
 urlpatterns = [
     path('register/', RegisterView.as_view(), name='register'),
+    path('login/', LoginView.as_view(), name='login'),
+    path('logout/', LogoutView.as_view(), name='logout'),
+    path('file-upload/', UploadView.as_view(), name='file-upload'),
 ]
