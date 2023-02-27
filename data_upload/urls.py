@@ -19,9 +19,14 @@ from .views.register_APIView import RegisterView
 from .views.login_APIView import LoginView
 from .views.logout_APIView import LogoutView
 from .views.upload_APIView import UploadView
+from .views.get_users_APIView import GetUsersView
+from .views.getUserEmail_APIView import GetUserEmailView
+
 urlpatterns = [
     path('register/', RegisterView.as_view(), name='register'),
     path('login/', LoginView.as_view(), name='login'),
     path('logout/', LogoutView.as_view(), name='logout'),
     path('file-upload/', UploadView.as_view(), name='file-upload'),
+    path('get-users/', GetUsersView.as_view(), name='get-users'),
+    path('get-user-email/', GetUserEmailView.as_view(), name='get-user-email'),
 ]
