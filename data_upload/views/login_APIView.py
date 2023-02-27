@@ -1,11 +1,12 @@
 from rest_framework.views import APIView
 from rest_framework.response import Response
-from rest_framework import status
+from rest_framework import status, permissions
 from ..serializers.login_serializer import LoginSerializer
 from django.middleware.csrf import get_token
 from django.contrib.auth import login
 
 class LoginView(APIView):
+    permission_classes = [permissions.AllowAny]
     @staticmethod
     def post(request):
         serializer = LoginSerializer(data=request.data)
