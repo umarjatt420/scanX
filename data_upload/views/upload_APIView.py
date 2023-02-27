@@ -2,7 +2,7 @@ import os
 from rest_framework.parsers import FileUploadParser
 from rest_framework.response import Response
 from rest_framework.views import APIView
-from rest_framework import status
+from rest_framework import status, permissions
 from django.conf import settings
 from ..serializers.upload_serializer import UploadSerializer
 from django.core.files.storage import FileSystemStorage
@@ -11,6 +11,7 @@ from utils.write_text_file import write_text_lines
 
 class UploadView(APIView):
     parser_class = (FileUploadParser,)
+    permission_classes = [permissions.IsAuthenticated]
 
     @staticmethod
     def post(request):
