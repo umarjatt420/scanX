@@ -9,5 +9,6 @@ class GetUserEmailView(APIView):
     def get(request):
         user = request.user
         return Response({
-            'email': user.email
+            'email': user.email,
+            'is_superuser': user.is_superuser
         }, status=status.HTTP_200_OK)
