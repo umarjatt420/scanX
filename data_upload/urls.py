@@ -23,6 +23,7 @@ from .views.get_users_APIView import GetUsersView
 from .views.getUserEmail_APIView import GetUserEmailView
 from .views.delete_user_APIView import DeleteUserView
 from .views.update_user_APIView import UpdateUserView
+from rest_framework.authtoken.views import obtain_auth_token
 
 urlpatterns = [
     path('register/', RegisterView.as_view(), name='register'),
@@ -33,4 +34,5 @@ urlpatterns = [
     path('get-user-email/', GetUserEmailView.as_view(), name='get-user-email'),
     path('delete-user/<int:pk>/', DeleteUserView.as_view(), name='delete-user'),
     path('update-user/<int:pk>/', UpdateUserView.as_view(), name='update-user'),
+    path('api-auth-token/', obtain_auth_token, name='api-auth-token'),
 ]
