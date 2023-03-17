@@ -5,7 +5,6 @@ from ..serializers.login_serializer import LoginSerializer
 from django.contrib.auth import login
 from rest_framework.authtoken.models import Token
 
-
 class LoginView(APIView):
     permission_classes = [permissions.AllowAny]
     serializer_class = LoginSerializer
